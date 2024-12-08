@@ -1,0 +1,99 @@
+[tool.poetry]
+name = "pysql"
+version = "0.0.0"
+description = "A powerful python package to generate database objects from JSON/YAML and create dynamic class representations"
+authors = ["Dr Prashant Aparajeya <p.aparajeya@aisimply.uk>"]
+license = "Apache-2.0"
+readme = "README.md"
+keywords = ["database", "sql", "json", "yaml", "orm", "sqlalchemy", "mysql", "postgres", "mssql", "gcp", "azure", "aws"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+# Common dependencies for all environments
+requests = "^2.26.0"
+python-dotenv ="^1.0.1"
+
+[tool.poetry.group.mssql]
+optional = true
+
+[tool.poetry.group.mssql.dependencies]
+pyodbc = "^5.2.0"
+
+[tool.poetry.group.mssql-aws]
+optional = true
+
+[tool.poetry.group.mssql-aws.dependencies]
+pyodbc = "^5.2.0"
+boto3 = "^1.18.63"
+
+[tool.poetry.group.mssql-azure]
+optional = true
+
+[tool.poetry.group.mssql-azure.dependencies]
+pyodbc = "^5.2.0"
+azure-storage-blob = "^12.9.0"
+
+[tool.poetry.group.mssql-gcp]
+optional = true
+
+[tool.poetry.group.mssql-gcp.dependencies]
+pyodbc = "^5.2.0"
+google-cloud-storage = "^2.0.0"
+
+[tool.poetry.group.mysql]
+optional = true
+
+[tool.poetry.group.mysql.dependencies]
+mysql-connector-python = "^9.1.0"
+
+[tool.poetry.group.mysql-aws]
+optional = true
+
+[tool.poetry.group.mysql-aws.dependencies]
+mysql-connector-python = "^9.1.0"
+boto3 = "^1.18.63"
+
+[tool.poetry.group.mysql-azure]
+optional = true
+
+[tool.poetry.group.mysql-azure.dependencies]
+mysql-connector-python = "^9.1.0"
+
+[tool.poetry.group.mysql-gcp]
+optional = true
+
+[tool.poetry.group.mysql-gcp.dependencies]
+mysql-connector-python = "^9.1.0"
+google-cloud-storage = "^2.0.0"
+
+[tool.poetry.group.postgres]
+optional = true
+
+[tool.poetry.group.postgres.dependencies]
+psycopg2-binary = "^2.9.10"
+
+[tool.poetry.group.postgres-aws]
+optional = true
+
+[tool.poetry.group.postgres-aws.dependencies]
+psycopg2-binary = "^2.9.10"
+boto3 = "^1.18.63"
+
+[tool.poetry.group.postgres-azure]
+optional = true
+
+[tool.poetry.group.postgres-azure.dependencies]
+psycopg2-binary = "^2.9.10"
+azure-storage-blob = "^12.9.0"
+
+[tool.poetry.group.postgres-gcp]
+optional = true
+
+[tool.poetry.group.postgres-gcp.dependencies]
+psycopg2-binary = "^2.9.10"
+google-cloud-storage = "^2.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
