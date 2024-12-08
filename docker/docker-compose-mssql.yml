@@ -1,0 +1,42 @@
+services:
+  mssql:
+    container_name: mssql
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: Super_Encrypted_Passw0rd!
+      MSSQL_PID: Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql-data:/var/opt/mssql
+    restart: unless-stopped
+    # networks:
+    #   - mssql.net
+
+  # adminer:
+  #   container_name: adminer
+  #   image: adminer:latest
+  #   ports:
+  #     - "8080:8080"
+  #   restart: unless-stopped
+
+  # pgadmin:
+  #   container_name: pgadmin
+  #   image: dpage/pgadmin4:latest
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: admin@example.com
+  #     PGADMIN_DEFAULT_PASSWORD: SuperSecretPassword123!
+  #   ports:
+  #     - "8080:80"
+  #   # volumes:
+  #   #   - pgadmin-data:/var/lib/pgadmin
+  #   restart: unless-stopped
+
+volumes:
+  mssql-data:
+    name: mssql-data
+
+# networks:
+#   mssql.net:
+#     external: true
